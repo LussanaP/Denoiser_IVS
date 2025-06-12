@@ -1,0 +1,46 @@
+---
+model:
+  base_filters: 32
+  channels: 1
+
+train:
+  patch size: 128
+  batch size: 16
+  learning rate: 1.e-4
+  weight decay: 1.e-5
+  scheduler gamma: 0.5
+  scheduler step: 3
+  epochs: 3
+  dataset splits: 10
+  device: cuda:0
+  multi gpu: false
+  workers: 10
+  clean dataset path: 'Patches_ivs/dt_3/train/label'
+  noisy dataset path: 'Patches_ivs/dt_3/train/noisy'
+  checkpoint path: 'Checkpoints/RDUNet/dt_3'
+val:
+  patch size: 128
+  batch size: 16
+  frequency: 1
+  workers: 24
+  clean dataset path: 'Patches_ivs/dt_3/val/label'
+  noisy dataset path: 'Patches_ivs/dt_3/val/noisy'
+
+test:
+  device: cuda:0
+  padding: true
+  test dataset path: 'real'  
+  results path: 'real/pred'    
+  pretrained models path: 'Checkpoints/RDUNet/dt_3'
+  save images: true
+
+test_1&2:
+  device: cuda:0
+  padding: true
+  test dataset path: 'real'
+  results path: 'real/pred'  
+  pretrained models path 1: 'Checkpoints/RDUNet/TA/TA1'
+  pretrained models path 2: 'Checkpoints/RDUNet/TA/TA2'
+  save images: true
+  
+...

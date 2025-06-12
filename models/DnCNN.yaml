@@ -1,0 +1,12 @@
+---
+train_folder: "./Patches_ivs/TA/TA2/train/"
+val_folder: "./Patches_ivs/TA/TA2/val/"
+test_folder: "./Dataset/TA/TA2/test/perc"
+pred_folder: "./Results_ivs/DnCNN/TA/TA2/pred"
+best_model: "./Checkpoints/DnCNN/TA/TA2/CDnCNN.pth"
+last_model: "./Checkpoints/DnCNN/TA/TA2/CDnCNN_last.pth"
+history_model: "./Checkpoints/DnCNN/TA/TA2/CDnCNN.log"
+each_model: "./Checkpoints/DnCNN/TA/TA2/"
+layers: 20
+filters: 64
+...
